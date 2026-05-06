@@ -95,7 +95,6 @@ body{
   margin-bottom:36px;
   opacity:0;animation:fadeUp .7s ease .1s forwards;
 }
-
 .hero-title{
   font-family:'Playfair Display',serif;
   font-size:clamp(52px,9vw,100px);
@@ -536,19 +535,147 @@ footer{
   color:rgba(255,255,255,0.25);
 }
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:680px){
-  .cc-head{padding:36px 28px 32px;}
-  .cc-body{padding:32px 28px 36px;}
-  .tools-grid{grid-template-columns:1fr;}
-  .pain-grid{grid-template-columns:1fr;}
-  .eco-flow{
+/* ─── RESPONSIVE — MOBILE FIRST ─── */
+@media(max-width:768px){
+
+  /* Layout */
+  .wrap{padding:0 16px;}
+
+  /* Hero */
+  .hero{min-height:100svh;padding:80px 20px 60px;}
+  .ring-1{width:380px;height:380px;}
+  .ring-2{width:280px;height:280px;}
+  .ring-3{width:180px;height:180px;}
+  .hero-badge{font-size:9px;letter-spacing:2px;padding:6px 14px;}
+  .hero-desc{font-size:14px;margin-bottom:36px;}
+  .hero-scroll{display:none;}
+
+  /* WHY section */
+  .why-section{padding:60px 0;}
+  .why-header{margin-bottom:40px;}
+  .why-lead{font-size:15px;}
+  .pain-grid{
     grid-template-columns:1fr;
+    gap:2px;margin-bottom:40px;
   }
-  .eco-arrow{transform:rotate(90deg);}
-  .eco-card{padding:32px 24px;}
-  .eco-flow{gap:8px;}
-  .cta-grid{grid-template-columns:1fr !important;}
+  .pain-item{padding:24px 20px;}
+  .pain-icon{font-size:22px;margin-bottom:10px;}
+  .pain-title{font-size:14px;margin-bottom:8px;}
+  .pain-desc{font-size:13px;}
+  .why-answer{padding-top:40px;}
+  .why-answer-body{font-size:14px;}
+  .compass-strip{gap:8px;}
+  .c-pill{font-size:11px;padding:8px 14px;}
+
+  /* Pullquote */
+  .pullquote{padding:48px 0;}
+
+  /* Compasses section */
+  .compasses{padding:60px 0;}
+  .section-head{margin-bottom:40px;}
+  .compass-card{margin-bottom:40px;border-radius:4px;}
+
+  /* Card head */
+  .cc-head{padding:28px 20px 24px;}
+  .cc-num{font-size:52px;top:14px;right:18px;}
+  .cc-compass-label{font-size:8px;letter-spacing:2px;margin-bottom:8px;}
+  .cc-name{font-size:clamp(32px,10vw,44px);}
+  .cc-vn{font-size:11px;margin-bottom:14px;}
+  .cc-question{font-size:15px;padding-top:14px;}
+
+  /* Card body */
+  .cc-body{padding:24px 16px 28px;}
+  .cc-why{padding:18px 16px;margin-bottom:24px;}
+  .cc-why-text{font-size:15px;line-height:1.55;}
+  .cc-tools-label{font-size:9px;margin-bottom:14px;}
+  .cc-tools{margin-bottom:24px;}
+
+  /* Tools grid — single column on mobile */
+  .tools-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .tool-item{padding:14px 16px;}
+  .tool-name{font-size:13px;}
+  .tool-desc{font-size:12.5px;line-height:1.65;}
+
+  /* Result block */
+  .cc-result{padding:16px 14px;gap:12px;}
+  .cc-result-icon{font-size:18px;}
+  .cc-result-text{font-size:13px;}
+
+  /* DEPTH track BMI/ICM — stack vertical */
+  .cc-body [style*="grid-template-columns:1fr 1fr"]{
+    display:block !important;
+  }
+  .cc-body [style*="grid-template-columns:1fr 1fr"] > div{
+    margin-bottom:12px;
+  }
+  .cc-body [style*="grid-template-columns:1fr 1fr"] > div:last-child{
+    margin-bottom:0;
+  }
+
+  /* FC OD/OM/FC cards — stack vertical */
+  .cc-body [style*="grid-template-columns:1fr 1fr 1fr"]{
+    display:block !important;
+  }
+  .cc-body [style*="grid-template-columns:1fr 1fr 1fr"] > div{
+    margin-bottom:10px;
+  }
+  .cc-body [style*="grid-template-columns:1fr 1fr 1fr"] > div:last-child{
+    margin-bottom:0;
+  }
+
+  /* OC 3 cards — stack vertical */
+  .cc-body [style*="grid-template-columns:1fr 1fr 1fr"]{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  /* FC badge row — wrap */
+  .cc-body [style*="display:flex;align-items:center;gap:10px"]{
+    flex-wrap:wrap;gap:6px !important;
+  }
+
+  /* SOA grid — 1 column */
+  .cc-body [style*="grid-template-columns:1fr 1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Ecosystem */
+  .ecosystem{padding:60px 0;}
+  .eco-card{padding:24px 16px;}
+  .eco-title{font-size:22px;margin-bottom:10px;}
+  .eco-sub{font-size:13px;margin-bottom:32px;}
+  .eco-note{font-size:13px;line-height:1.75;}
+
+  /* SVG compass diagram — smaller on mobile */
+  .eco-card svg{max-width:100% !important;}
+
+  /* CTA grid */
+  .closing{padding:60px 0 80px;}
+  .closing-headline{font-size:clamp(24px,7vw,36px);}
+  .closing-body{font-size:14px;margin-bottom:36px;}
+  .closing [style*="grid-template-columns:1fr 1fr"]{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+    margin-bottom:36px !important;
+  }
+  .closing-stamp{
+    padding:14px 20px;gap:10px;
+    flex-wrap:wrap;justify-content:center;
+    text-align:center;
+  }
+  .stamp-sub{font-size:8px;}
+}
+
+/* Extra small phones */
+@media(max-width:390px){
+  .cc-name{font-size:30px;}
+  .cc-body{padding:20px 14px 24px;}
+  .eco-card{padding:20px 14px;}
 }
 </style>
 </head>
